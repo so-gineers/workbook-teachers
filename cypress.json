@@ -1,0 +1,10 @@
+{
+    "specs": "cypress/**",
+    "baseUrl": "http://localhost:4128",
+    "chromeWebSecurity": false,
+    "autorecord": {
+        "forceRecord": true,
+        "interceptPattern": "http://*/api/*"
+    },
+    "watchForFileChanges": true
+}
