@@ -1,5 +1,5 @@
 import railsRouter from "./_railsRouter";
-import RailsApiClient from "./_axios";
+import RailsApiClient from "./RailsApiClient";
 
 const LoginTeacher = async (credentials) => {
   const requestOptions = {
