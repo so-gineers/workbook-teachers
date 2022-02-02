@@ -1,12 +1,27 @@
+import { urlObjectKeys } from "next/dist/shared/lib/utils";
+
 const __url = (path) => {
   return `${process.env.RAILS_API_URL}/${path}`;
 };
 const railsRouter = {
-  createTeacherSession: (path = "teachers/sessions") => {
-    return __url(path);
-  },
-  getTeacherDashboard: (path = "") => {
-    return __url(path);
+  teachers: {
+    sessions: {
+      create: () => {
+        return __url("teachers/sessions");
+      },
+    },
+    dashboard: {
+      getAll: () => {
+        return __url("teachers/dashboards");
+      },
+    },
+    topics: {
+      frenchEssays: {
+        Show: (id) => {
+          return __url(`teachers/topics/french_essays/${id}`);
+        },
+      },
+    },
   },
 };
 

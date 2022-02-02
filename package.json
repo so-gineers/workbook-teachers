@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -16,6 +16,7 @@
     "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless"
   },
   "dependencies": {
+    "axios": "^0.25.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "i18n": "^0.13.4",
@@ -41,7 +42,6 @@
     "autoprefixer": "^10.4.0",
     "babel-jest": "^27.4.5",
     "cypress": "^9.1.1",
-    "cypress-autorecord": "^3.1.2",
     "enzyme": "^3.11.0",
     "eslint": ">=7.0.0",
     "eslint-config-next": "12.0.7",

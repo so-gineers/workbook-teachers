@@ -1,21 +1,22 @@
 import { Block, Card, List, ListItem, Link, BlockTitle } from "konsta/react";
 import React from "react";
 
-export default function FrenchEssayTopicSubmissionsPreview() {
+export default function FrenchEssayTopicSubmissionsPreview({
+  count,
+  subject_text,
+  id,
+}) {
   return (
     <>
       <Card
         footer={
           <div className="flex justify-between">
-            <Link>21</Link>
-            <Link href="topics/french_essays/show">Voir les copies</Link>
+            <Link>{count > 1 ? `${count} students` : `${count} student`} </Link>
+            <Link href={`topics/french_essays/${id}`}>View submissions</Link>
           </div>
         }
       >
-        <p>
-          A french essay topic specification. It may include multiple sentences
-          and sometimes it can be wordy.
-        </p>
+        <p>{subject_text}</p>
       </Card>
     </>
   );

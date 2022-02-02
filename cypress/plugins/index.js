@@ -13,7 +13,6 @@
 // the project's config changing)
 
 const fs = require("fs");
-const autoRecord = require("cypress-autorecord/plugin");
 
 /**
  * @type {Cypress.PluginConfig}
@@ -22,5 +21,4 @@ const autoRecord = require("cypress-autorecord/plugin");
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-  autoRecord(on, config, fs);
 };

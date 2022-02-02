@@ -16,7 +16,6 @@ export default NextAuth({
       },
       authorize: (credentials) => {
         const data = Requests.LoginTeacher(credentials);
-        console.log(data);
         return data;
       },
     }),

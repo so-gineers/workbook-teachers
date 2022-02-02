@@ -8,8 +8,6 @@ describe("Home page", () => {
     cy.url().should("include", "api/auth/signin");
 
     cy.get('input[name="username"]').should("exist");
-    //  cy.get('input[name="username"]').type('pathe');
-    //    cy.get('input[name="password"]').type('test');
   });
 
   it("can visit reset password page", () => {
