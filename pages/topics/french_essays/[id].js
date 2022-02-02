@@ -3,7 +3,6 @@ import React from "react";
 import FrenchEssayTopic from "../../../components/french_essay_topic";
 import NavigateBack from "../../../components/navigate_back";
 import FrenchEssaySubmissionPreview from "../../../components/FrenchEssaySubmissionPreview";
-import { useRouter } from "next/router";
 import { getSession } from "next-auth/react";
 import axios from "axios";
 

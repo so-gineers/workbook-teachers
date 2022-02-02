@@ -18,6 +18,8 @@ jobs:
          node-version: 16
      - name: React tests
        run: |
+         mv cypress.ci.json cypress.json
          yarn install
+         yarn dev
          yarn cypress:headless
        working-directory: .

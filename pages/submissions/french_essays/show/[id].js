@@ -10,7 +10,7 @@ import {
 } from "konsta/react";
 import Head from "next/head";
 import React, { useState } from "react";
-import NavigateBack from "../../../components/navigate_back";
+import NavigateBack from "../../../../components/navigate_back";
 import { useReactMediaRecorder } from "react-media-recorder";
 import { TiMediaRecord, TiMediaStop, TiMediaPlayOutline } from "react-icons/ti";
 
