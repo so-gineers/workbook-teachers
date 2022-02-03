@@ -2,7 +2,11 @@ import { Navbar, Button, Segmented, SegmentedButton } from "konsta/react";
 import Link from "next/link";
 import React from "react";
 
-export default function LoggedInNavbar({ title }) {
+export default function LoggedInNavbar({
+  title,
+  activeSubNavBarItem,
+  setActiveSubNavBarItem,
+}) {
   return (
     <Navbar
       title={title}
@@ -13,18 +17,51 @@ export default function LoggedInNavbar({ title }) {
         </Button>
       }
       subnavbar={
-        <Segmented strong>
-          <SegmentedButton small strong active href="/">
-            In Review
-          </SegmentedButton>
-          <SegmentedButton small strong>
-            <Link href="reviewables">To Review</Link>
-          </SegmentedButton>
-          <SegmentedButton small strong>
-            <Link href="exercises">Exercises</Link>
-          </SegmentedButton>
-        </Segmented>
+        <SubNavBar
+          active={activeSubNavBarItem}
+          setActiveSubNavBarItem={setActiveSubNavBarItem}
+        />
       }
     />
   );
 }
+
+const SubNavBar = ({ active, setActiveSubNavBarItem }) => {
+  return (
+    <Segmented strong>
+      <SubNavBarItem
+        setActiveSubNavBarItem={setActiveSubNavBarItem}
+        active={active == 0 ? true : false}
+        text="In Review"
+        index={0}
+      />
+      <SubNavBarItem
+        setActiveSubNavBarItem={setActiveSubNavBarItem}
+        active={active == 1 ? true : false}
+        text="To Review"
+        index={1}
+      />
+      <SubNavBarItem
+        setActiveSubNavBarItem={setActiveSubNavBarItem}
+        active={active == 2 ? true : false}
+        text="Topics"
+        index={2}
+      />
+    </Segmented>
+  );
+};
+
+const SubNavBarItem = ({ active, text, setActiveSubNavBarItem, index }) => {
+  return (
+    <SegmentedButton
+      small
+      strong
+      {...(active && { active: active })}
+      onClick={() => {
+        setActiveSubNavBarItem(index);
+      }}
+    >
+      {text}
+    </SegmentedButton>
+  );
+};

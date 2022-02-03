@@ -9,9 +9,14 @@ import useTranslation from "next-translate/useTranslation";
 import axios from "axios";
 import { useState } from "react";
 const LoggedInPage = ({ t, locales, reviewable, reviewing }) => {
+  const [activeSubNavBarItem, setActiveSubNavBarItem] = useState(0);
   return (
     <Page>
-      <LoggedInNavbar title="Dashboard" />
+      <LoggedInNavbar
+        title="Dashboard"
+        activeSubNavBarItem={activeSubNavBarItem}
+        setActiveSubNavBarItem={setActiveSubNavBarItem}
+      />
       {reviewable.map(({ id, subject_text, count }) => {
         return (
           <FrenchEssayTopicSubmissionsPreview
@@ -56,7 +61,6 @@ export async function getServerSideProps(context) {
   const session = await getSession(context);
   if (session) {
     const apiToken = session.user.apiToken;
-    console.log(apiToken);
     const response = await axios.get(
       `http://0.0.0.0:3000/api/teachers/dashboards?token=${apiToken}`
     );
