@@ -1,0 +1,25 @@
+#name: Cypress
+#on:
+#  push:
+#  pull_request:
+#jobs:
+# teachers_components_tests:
+#   runs-on: ubuntu-latest
+#   steps:
+#     - uses: actions/checkout@v2
+#     - uses: actions/cache@v2
+#       with:
+#         path: ${{ github.workspace }}/.next/cache
+#         key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+#         restore-keys: |
+#           ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
+#     - uses: actions/setup-node@v2
+#       with:
+#         node-version: 16
+#     - name: React tests
+#       run: |
+#         mv cypress.ci.json cypress.json
+#         yarn install
+#         yarn dev
+#         yarn cypress:headless
+#       working-directory: .

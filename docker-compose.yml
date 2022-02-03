@@ -1,0 +1,30 @@
+version: '3.9'
+services:
+  base_teachers:
+    image: base_teachers
+    build:
+      context: .
+      args:
+        NODE_VERSION: 'node:16-alpine'
+    environment:
+      RAILS_API_URL: http://api_ruby:3000
+    command: /bin/true
+  # Teachers frontend service
+  #
+  # Visit http://localhost:4128 to see it working
+  teachers:
+    image: base_teachers
+    ports:
+      - "4128:3000"
+    networks:
+      - wbk-teachers-net
+    environment:
+      NEXT_AUTH_SECRET: notassecret
+      NEXTAUTH_URL: http://0.0.0.0:3000
+      RAILS_API_URL: http://api_ruby:3000
+    command: yarn run dev
+    volumes:
+      - ./:/app
+networks:
+  wbk-teachers-net:
+    name: workbook-api-network

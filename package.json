@@ -1,0 +1,59 @@
+{
+  "name": "workbook-teachers",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest",
+    "playwright": "playwright test",
+    "playwright:headed": "playwright test --headed",
+    "cypress:headed": "cypress",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test start http://localhost:3000 cypress",
+    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "i18n": "^0.13.4",
+    "jsdom": "^19.0.0",
+    "jsdom-global": "^3.0.2",
+    "konsta": "^0.7.0",
+    "nanoid": "^3.2.0",
+    "next": "12.0.7",
+    "next-auth": "^4.0.1",
+    "next-translate": "^1.2.0",
+    "react": "^0.14 || ^15.0.0 || ^16.0.0-alpha",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.3.1",
+    "react-media-recorder": "^1.6.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
+    "@playwright/test": "^1.17.1",
+    "@types/react": "^17.0.37",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
+    "autoprefixer": "^10.4.0",
+    "babel-jest": "^27.4.5",
+    "cypress": "^9.1.1",
+    "enzyme": "^3.11.0",
+    "eslint": ">=7.0.0",
+    "eslint-config-next": "12.0.7",
+    "eslint-plugin-cypress": "^2.12.1",
+    "jest": "^27.4.5",
+    "playwright": "^1.17.1",
+    "postcss": "^8.4.5",
+    "react": "17.0.2",
+    "tailwindcss": "^3.0.7",
+    "typescript": "^4.5.4"
+  },
+  "jshintConfig": {
+    "esversion": 6
+  }
+}
